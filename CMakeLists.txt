@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(ApplicationLibrary)
+project(ApplicationLibrary LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -7,8 +7,9 @@ set(CMAKE_CXX_STANDARD 20)
 add_subdirectory(tests)
 
 # Obtain the source files
-file(GLOB_RECURSE AL_SOURCES source/*.cpp)
-file(GLOB_RECURSE AL_HEADERS source/*.hpp)
+file(GLOB_RECURSE SOURCES source/*.cpp)
+file(GLOB_RECURSE HEADERS source/*.hpp)
 
-# Include the source files
-include_directories(source)
+# Make the source files available in the parent scope
+set(APPLICATION_LIBRARY_SOURCES ${SOURCES} PARENT_SCOPE)
+set(APPLICATION_LIBRARY_HEADERS ${HEADERS} PARENT_SCOPE)
