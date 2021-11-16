@@ -30,7 +30,7 @@ public:
     void draw() override;
     void draw(Point<float> const& offset) override;
     void draw(float offsetX, float offsetY) override;
-    void adjustAfterResize() override;
+    void adjustToLayout() override;
 
 public:
     //! @brief Get the thickness of the grid's lines in pixels.

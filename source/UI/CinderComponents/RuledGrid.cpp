@@ -59,7 +59,7 @@ void RuledGrid::draw(float const offsetX, float const offsetY) {
     cinder::gl::popModelMatrix();
 }
 
-void RuledGrid::adjustAfterResize() {
+void RuledGrid::adjustToLayout() {
     rules->getGlslProg()->uniform("ViewportScale", ci::vec2(cinder::app::getWindowSize()));
 }
 

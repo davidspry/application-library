@@ -52,9 +52,9 @@ public:
         shouldRedraw = componentShouldRedraw;
     }
 
-    //! @brief Indicate that the component should adjust after resizing.
+    //! @brief Indicate that the component should adjust to a change in its size or position.
 
-    virtual inline void adjustAfterResize() {
+    virtual inline void adjustToLayout() {
     }
 
 protected:
