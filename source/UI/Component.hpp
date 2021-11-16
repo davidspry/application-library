@@ -23,7 +23,7 @@ public:
             ds::ui::Bounds<float>(width, height) {
     }
 
-    virtual ~Component() = default;
+    ~Component() override = default;
 
 public:
     //! @brief Draw the component.
