@@ -29,7 +29,9 @@ public:
     void draw(float offsetX, float offsetY) override;
 
 public:
-    [[nodiscard]] inline MarqueeSelection const& getMarqueeSelection() const { return selection; }
+    //! @brief Get the bounds of the marquee selection if one exists or the cursor position otherwise.
+
+    [[nodiscard]] ds::ui::Bounds<int> getSelectionBounds() const;
 
 public:
     void moveCursor(Direction const&& direction) override;

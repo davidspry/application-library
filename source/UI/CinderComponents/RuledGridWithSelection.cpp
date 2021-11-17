@@ -46,6 +46,14 @@ void RuledGridWithSelection::draw(float const offsetX, float const offsetY) {
     RuledGridWithCursor::draw(offsetX, offsetY);
 }
 
+ds::ui::Bounds<int> RuledGridWithSelection::getSelectionBounds() const {
+    if (selection.containsSelection()) {
+        return {selection.origin(), selection.size()};
+    } else {
+        return {position.x, position.y, 1, 1};
+    }
+}
+
 void RuledGridWithSelection::moveCursor(GridPosition::Direction const&& direction) {
     RuledGridWithCursor::moveCursor(std::forward<GridPosition::Direction const>(direction));
 
