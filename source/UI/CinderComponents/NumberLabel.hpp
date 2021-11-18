@@ -8,7 +8,6 @@
 #include <sstream>
 #include <cinder/Font.h>
 #include <cinder/gl/gl.h>
-
 #include <UI/Constructs/ScrollableValue.hpp>
 #include <UI/CinderComponents/GridOutline.hpp>
 
@@ -31,9 +30,8 @@ public:
     }
 
 private:
-    void init(cinder::Font const& labelFont) {
-        textBox.font(labelFont)
-               .size(size().w, ci::TextBox::GROW)
+    void init() {
+        textBox.size(size().w, ci::TextBox::GROW)
                .alignment(ci::TextBox::CENTER)
                .color(ci::Color::white())
                .premultiplied(false);
@@ -48,6 +46,11 @@ private:
         didUpdateScrollableValue();
     }
 
+    void init(cinder::Font const& labelFont) {
+        textBox.font(labelFont);
+        init();
+    }
+
 public:
     void draw() override {
         draw(0.0f, 0.0f);
@@ -58,6 +61,10 @@ public:
     }
 
     void draw(float const offsetX, float const offsetY) override {
+        if (shouldRedraw) {
+            init();
+        }
+
         cinder::gl::pushModelMatrix();
         cinder::gl::translate(offsetX, offsetY);
         cinder::gl::translate(origin().x, origin().y);
@@ -67,7 +74,7 @@ public:
             hoverBatch->draw();
         }
 
-        cinder::gl::translate(0.0f, 0.5f * (size().h - static_cast<float>(texture->getActualHeight())));
+        cinder::gl::translate(0.0f, 0.5f * (size().h - static_cast<float>(texture->getHeight())));
         cinder::gl::color(1.0f, 1.0f, 1.0f);
         cinder::gl::draw(texture);
         cinder::gl::popModelMatrix();
