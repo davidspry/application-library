@@ -24,7 +24,6 @@ void RuledGridWithSelection::draw(Point<float> const& offset) {
 
 void RuledGridWithSelection::draw(float const offsetX, float const offsetY) {
     if (shouldRedraw) {
-        shouldRedraw = false;
         init();
     }
 

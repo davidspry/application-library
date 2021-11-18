@@ -24,7 +24,6 @@ void Button::draw(Point<float> const& offset) {
 
 void Button::draw(float const offsetX, float const offsetY) {
     if (shouldRedraw) {
-        shouldRedraw = false;
         init();
     }
 

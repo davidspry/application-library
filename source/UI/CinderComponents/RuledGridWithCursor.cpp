@@ -25,7 +25,6 @@ void RuledGridWithCursor::draw(Point<float> const& offset) {
 
 void RuledGridWithCursor::draw(float const offsetX, float const offsetY) {
     if (shouldRedraw) {
-        shouldRedraw = false;
         init();
     }
 
