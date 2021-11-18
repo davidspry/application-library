@@ -53,7 +53,10 @@ public:
 
         if (isBeingPressed()) {
             setIsBeingPressed(false);
-            targetWasReleased(event);
+
+            if (isCursorInBounds(event)) {
+                targetWasReleased(event);
+            }
         }
     }
 
