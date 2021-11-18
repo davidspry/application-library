@@ -41,7 +41,7 @@ protected:
     void targetWasPressed(CursorEvent const& event) override;
     void cursorDidDrag(CursorEvent const& event) override;
 
-private:
+protected:
     cinder::gl::BatchRef cursor;
 };
 
