@@ -24,7 +24,7 @@ public:
     //! @param callback The function to be invoked as the button state changes.
     //! @param initialState The initial state of the button.
 
-    ButtonState(std::function<void(bool const& buttonState)>&& callback,
+    ButtonState(std::function<void(bool buttonState)>&& callback,
                 bool const initialState): ds::ui::CursorTarget(),
                                           buttonCallback(std::move(callback)),
                                           buttonIsPressed(initialState) {
@@ -67,7 +67,7 @@ protected:
     bool buttonIsPressed {false};
 
 protected:
-    std::function<void(bool const& buttonState)> buttonCallback;
+    std::function<void(bool buttonState)> buttonCallback;
 };
 
 template<>

@@ -16,7 +16,7 @@ public:
     //! @param buttonStateVariable The variable that should be synchronised with the button state.
 
     explicit Button(bool& buttonStateVariable):
-            Button([&](bool const& buttonState) {
+            Button([&](bool const buttonState) {
                 buttonStateVariable = buttonState;
             }, buttonStateVariable) {
     }
@@ -25,7 +25,7 @@ public:
     //! @param buttonStateVariable The variable that should be synchronised with the button state.
 
     explicit Button(std::atomic<bool>& buttonStateVariable):
-            Button([&](bool const& buttonState) {
+            Button([&](bool const buttonState) {
                 buttonStateVariable.store(buttonState);
             }, buttonStateVariable.load()) {
     }
@@ -34,7 +34,7 @@ public:
     //! @param callback The function that should be invoked when the button's state changes.
     //! @param initialButtonState The button's initial state, which defaults to `false`.
 
-    explicit Button(std::function<void(bool const&)> callback, bool const initialButtonState = false):
+    explicit Button(std::function<void(bool)> callback, bool const initialButtonState = false):
             GridOutline(1, 2),
             ButtonState(std::move(callback), initialButtonState) {
         init();
