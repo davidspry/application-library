@@ -189,6 +189,34 @@ public:
         return withSizeFromOrigin(size.w, size.h);
     }
 
+    //! @brief Produce a copy with the given width, anchored at the origin.
+    //! @param width The desired width.
+
+    [[nodiscard]] inline ds::ui::Bounds<T> withWidthFromOrigin(T const width) const {
+        return withSizeFromOrigin(width, size().h);
+    }
+
+    //! @brief Produce a copy with the given width, anchored at the centre.
+    //! @param width The desired width.
+
+    [[nodiscard]] inline ds::ui::Bounds<T> withWidthFromCentre(T const width) const {
+        return withSizeFromCentre(width, size().h);
+    }
+
+    //! @brief Produce a copy with the given height, anchored at the origin.
+    //! @param height The desired height.
+
+    [[nodiscard]] inline ds::ui::Bounds<T> withHeightFromOrigin(T const height) const {
+        return withSizeFromOrigin(size().w, height);
+    }
+
+    //! @brief Produce a copy with the given height, anchored at the centre.
+    //! @param height The desired height.
+
+    [[nodiscard]] inline ds::ui::Bounds<T> withHeightFromCentre(T const height) const {
+        return withSizeFromCentre(size().w, height);
+    }
+
 public:
     //! @brief Set the size of the bounds, anchored at the origin.
     //! @param width The desired width.
