@@ -17,12 +17,12 @@ public:
 
 public:
     static void dispatch(Event const& event);
-    static void subscribe(EventType const& eventType, ReceiverInterface* receiver);
-    static void unsubscribe(EventType const& eventType, ReceiverInterface* receiver);
+    static void subscribe(int const& eventId, ReceiverInterface* receiver);
+    static void unsubscribe(int const& eventId, ReceiverInterface* receiver);
 
 private:
     using EventReceivers = std::vector<ReceiverInterface*>;
-    using EventChannels = std::unordered_map<EventType, EventReceivers>;
+    using EventChannels = std::unordered_map<int, EventReceivers>;
 
     inline static EventChannels& channels() {
         static EventChannels eventChannels;

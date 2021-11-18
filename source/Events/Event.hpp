@@ -5,20 +5,23 @@
 
 namespace ds::events {
 
-//! @enum Types of system events.
+//! @namespace Types of system events.
+//! @note Inherit from this struct in order to add new events.
 
-enum class EventType {
-    CursorEvent
-};
+namespace EventType {
+    static constexpr int CursorEvent {-1};
+}
 
 //! @struct An event within a system.
 
 struct Event {
-    explicit Event(EventType const& eventType):
-            type(eventType) {
+    explicit Event(int const eventType):
+            id(eventType) {
     }
 
-    EventType const type;
+    virtual ~Event() = default;
+
+    int const id;
 };
 
 }

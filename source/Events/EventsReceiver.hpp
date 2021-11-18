@@ -11,15 +11,15 @@ namespace ds::events {
 
 //! @class An abstract class that can receive events of the given event type.
 
-template<EventType E>
+template<int EventId>
 class Receiver: public ReceiverInterface {
 public:
     Receiver() {
-        ds::events::Dispatcher::subscribe(E, this);
+        ds::events::Dispatcher::subscribe(EventId, this);
     }
 
     ~Receiver() override {
-        ds::events::Dispatcher::unsubscribe(E, this);
+        ds::events::Dispatcher::unsubscribe(EventId, this);
     }
 
 public:
