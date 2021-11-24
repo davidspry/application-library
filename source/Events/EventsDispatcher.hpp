@@ -23,11 +23,7 @@ public:
 private:
     using EventReceivers = std::vector<ReceiverInterface*>;
     using EventChannels = std::unordered_map<int, EventReceivers>;
-
-    inline static EventChannels& channels() {
-        static EventChannels eventChannels;
-        return eventChannels;
-    }
+    inline static EventChannels channels {};
 };
 
 }
