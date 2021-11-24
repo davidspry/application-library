@@ -46,19 +46,20 @@ public:
     void draw() override;
     void draw(Point<float> const& offset) override;
     void draw(float offsetX, float offsetY) override;
-    void adjustToLayout() override;
 
 public:
     //! @brief Get the thickness of the ruled line in pixels.
 
     [[nodiscard]] inline float getLineThickness() const {
-        return thickness * 2.0f;
+        return thickness;
     }
 
     //! @brief Set the thickness of the ruled line.
     //! @param lineThickness The desired thickness in pixels.
 
-    void setLineThickness(float lineThickness);
+    inline void setLineThickness(float const lineThickness) {
+        thickness = lineThickness;
+    }
 
 protected:
     float thickness {2.0f};
