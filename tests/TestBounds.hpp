@@ -6,7 +6,7 @@
 #define TEST_BOUNDS_HPP
 
 #include <gtest/gtest.h>
-#include "UI/Bounds.hpp"
+#include <UI/Bounds.hpp>
 
 TEST(Rectangle, DefaultConstructor) {
 	ds::ui::Bounds<int> const r;

@@ -6,7 +6,7 @@
 #define TEST_POINT_HPP
 
 #include <gtest/gtest.h>
-#include "UI/Point.hpp"
+#include <UI/Point.hpp>
 
 TEST(Point, DefaultConstructor) {
     ds::ui::Point<float> const point {};
