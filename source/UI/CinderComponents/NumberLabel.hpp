@@ -23,7 +23,7 @@ public:
             NumberLabel(minimumValue, initialValue, maximumValue, {}) {
     }
 
-    NumberLabel(T const minimumValue, T const initialValue, T const maximumValue, cinder::Font&& labelFont):
+    NumberLabel(T const minimumValue, T const initialValue, T const maximumValue, cinder::Font const& labelFont):
             ds::ui::GridOutline(1, 3),
             ds::ui::ScrollableValue<T>(minimumValue, initialValue, maximumValue) {
         init(labelFont);
@@ -113,12 +113,12 @@ protected:
         return contains(event.xy);
     }
 
-private:
+protected:
     ci::TextBox textBox;
     ci::gl::BatchRef hoverBatch;
     ci::gl::TextureRef texture;
 
-private:
+protected:
     std::stringstream valueString;
 };
 
