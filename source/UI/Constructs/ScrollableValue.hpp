@@ -43,6 +43,18 @@ public:
         return value;
     }
 
+    //! @brief Get the minimum value.
+
+    inline T getMinimumValue() const {
+        return minimum;
+    }
+
+    //! @brief Get the maximum value.
+
+    inline T getMaximumValue() const {
+        return maximum;
+    }
+
 public:
     //! @brief Set the current value.
     //! @param newValue The desired value.
