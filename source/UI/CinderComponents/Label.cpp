@@ -7,7 +7,7 @@ namespace ds::ui {
 
 void Label::init() {
     textBox.size(static_cast<int>(size().w), ci::TextBox::GROW)
-           .alignment(ci::TextBox::CENTER)
+           .alignment(ci::TextBox::LEFT)
            .color(ci::Color::white())
            .premultiplied(false);
 
