@@ -84,17 +84,17 @@ public:
 
 public:
     NumberLabel& setCurrentValue(T const newValue) {
-        setValue(newValue);
+        ScrollableValue<T>::setValue(newValue);
         return *this;
     }
 
     NumberLabel& setMinimumValue(T const minimumValue) {
-        setMinimumScrollableValue(minimumValue);
+        ScrollableValue<T>::setMinimumScrollableValue(minimumValue);
         return *this;
     }
 
     NumberLabel& setMaximumValue(T const maximumValue) {
-        setMaximumScrollableValue(maximumValue);
+        ScrollableValue<T>::setMaximumScrollableValue(maximumValue);
         return *this;
     }
 
