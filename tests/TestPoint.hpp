@@ -2,8 +2,7 @@
 //! @date 3/10/21
 //! @author David Spry
 
-#ifndef TEST_POINT_HPP
-#define TEST_POINT_HPP
+#pragma once
 
 #include <gtest/gtest.h>
 #include <UI/Point.hpp>
@@ -111,5 +110,3 @@ TEST(Point, EqualityAndInequality) {
         EXPECT_NE(c, a);
     }
 }
-
-#endif

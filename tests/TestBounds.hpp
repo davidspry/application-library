@@ -2,8 +2,7 @@
 //! @date 3/10/21
 //! @author David Spry
 
-#ifndef TEST_BOUNDS_HPP
-#define TEST_BOUNDS_HPP
+#pragma once
 
 #include <gtest/gtest.h>
 #include <UI/Bounds.hpp>
@@ -123,5 +122,3 @@ TEST(Rectangle, SetPositionWithCentre) {
 		EXPECT_EQ(r.centre().y, y);
 	}
 }
-
-#endif
