@@ -9,7 +9,7 @@ namespace ds::ui {
 
 //! @struct A two-component vector representing a size, (w, h).
 
-template<typename T>
+template <typename T>
 using Size = Point<T>;
 
 }

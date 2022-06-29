@@ -11,7 +11,7 @@
 
 namespace ds::ui {
 
-template<typename T>
+template <typename T>
 class SliderState: public ds::ui::CursorTarget {
 public:
     //! @brief Create a slider state with the given callback function.
@@ -42,7 +42,6 @@ public:
 
         setValue(initialValue);
     }
-
 
     virtual ~SliderState() = default;
 

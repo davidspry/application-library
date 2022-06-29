@@ -15,7 +15,7 @@ namespace ds::ui {
 
 //! @class A scrollable number label whose size is set in terms of grid rows and columns.
 
-template<typename T>
+template <typename T>
 class NumberLabel: public ds::ui::GridOutline,
                    public ds::ui::ScrollableValue<T> {
 public:

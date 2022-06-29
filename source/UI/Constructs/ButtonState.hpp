@@ -17,7 +17,7 @@ enum class ButtonStateType {
 
 //! @class The state underlying a button.
 
-template<ButtonStateType ButtonType = ButtonStateType::Latch>
+template <ButtonStateType ButtonType = ButtonStateType::Latch>
 class ButtonState: public ds::ui::CursorTarget {
 public:
     //! @brief Create a button state with the given callback function and initial state.
@@ -70,7 +70,7 @@ protected:
     std::function<void(bool buttonState)> buttonCallback;
 };
 
-template<>
+template <>
 inline void ButtonState<ButtonStateType::Momentary>::targetWasPressed(CursorEvent const& event) {
     buttonIsPressed = !buttonIsPressed;
     buttonStateWasToggled();

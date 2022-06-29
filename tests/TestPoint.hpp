@@ -8,7 +8,7 @@
 #include <UI/Point.hpp>
 
 TEST(Point, DefaultConstructor) {
-    ds::ui::Point<float> const point {};
+    auto const point = ds::ui::Point<float> {};
 
     EXPECT_FLOAT_EQ(point.x, 0.0f);
     EXPECT_FLOAT_EQ(point.y, 0.0f);
@@ -19,7 +19,7 @@ TEST(Point, ParameterisedConstructor) {
         auto random = testing::internal::Random(i);
         auto x = static_cast<int>(random.Generate(25e3) - 10e3);
         auto y = static_cast<int>(random.Generate(25e3) - 10e3);
-        ds::ui::Point<int> const point {x, y};
+        auto const point = ds::ui::Point {x, y};
 
         EXPECT_EQ(point.x, x);
         EXPECT_EQ(point.y, y);
@@ -31,12 +31,12 @@ TEST(Point, ParameterisedConstructor) {
 TEST(Point, ArithmeticWithPoint) {
     for (auto i = 0; i < 25; ++i) {
         auto random = testing::internal::Random(i);
-        ds::ui::Point<int> const a {
+        auto const a = ds::ui::Point {
                 static_cast<int>(random.Generate(25e3) - 10e3),
                 static_cast<int>(random.Generate(25e3) - 10e3)
         };
 
-        ds::ui::Point<int> const b {
+        auto const b = ds::ui::Point {
                 static_cast<int>(random.Generate(25e3) - 10e3),
                 static_cast<int>(random.Generate(25e3) - 10e3)
         };
@@ -67,7 +67,7 @@ TEST(Point, ArithmeticWithValue) {
     for (auto i = 0; i < 25; ++i) {
         auto random = testing::internal::Random(i);
         auto const k = static_cast<float>(random.Generate(25e3) - 10e3);
-        ds::ui::Point<int> const a {
+        auto const a = ds::ui::Point {
                 static_cast<int>(random.Generate(25e3) - 10e3),
                 static_cast<int>(random.Generate(25e3) - 10e3)
         };
@@ -100,9 +100,9 @@ TEST(Point, EqualityAndInequality) {
         auto const x = static_cast<int>(random.Generate(25e3) - 10e3);
         auto const y = static_cast<int>(random.Generate(25e3) - 10e3);
 
-        ds::ui::Point<int> const a {x, y};
-        ds::ui::Point<int> const b {x, y};
-        ds::ui::Point<int> const c {x - 1, y + 1};
+        auto const a = ds::ui::Point {x, y};
+        auto const b = ds::ui::Point {x, y};
+        auto const c = ds::ui::Point {x - 1, y + 1};
 
         EXPECT_EQ(a, b);
         EXPECT_EQ(b, a);

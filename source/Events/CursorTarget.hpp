@@ -22,7 +22,7 @@ public:
         } else if (didCursorEnter(event)) {
             cursorDidEnter(event);
             setCursorIsHovering(true);
-        } else cursorDidMove(event);
+        } else { cursorDidMove(event); }
     }
 
     //! @brief This method should be invoked when a cursor press occurs.

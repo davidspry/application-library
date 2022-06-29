@@ -11,7 +11,7 @@ namespace ds::events {
 
 //! @class An abstract class that can receive events of the given event type.
 
-template<int EventId>
+template <int EventId>
 class Receiver: public ReceiverInterface {
 public:
     Receiver() {

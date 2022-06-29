@@ -10,7 +10,7 @@
 
 namespace ds::ui {
 
-template<typename Type = float>
+template <typename Type = float>
 class Slider: public Rule,
               public SliderState<Type> {
 public:

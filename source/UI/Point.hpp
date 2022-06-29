@@ -10,7 +10,7 @@ namespace ds::ui {
 
 //! @struct A two-component vector representing a point, (x, y).
 
-template<typename T>
+template <typename T>
 struct Point {
 public:
     union {
@@ -33,7 +33,7 @@ public:
     //! @param x The x-coordinate of the desired point.
     //! @param y The y-coordinate of the desired point.
 
-    template<typename K>
+    template <typename K>
     Point(K x, K y): Point(static_cast<T>(x), static_cast<T>(y)) {
     }
 
@@ -75,7 +75,7 @@ public:
     }
 
 public:
-    template<typename K>
+    template <typename K>
     inline Point operator+(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         return {
@@ -84,7 +84,7 @@ public:
         };
     }
 
-    template<typename K>
+    template <typename K>
     inline Point operator-(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         return {
@@ -93,7 +93,7 @@ public:
         };
     }
 
-    template<typename K>
+    template <typename K>
     inline Point operator*(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         return {
@@ -102,7 +102,7 @@ public:
         };
     }
 
-    template<typename K>
+    template <typename K>
     inline Point operator/(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         return {
@@ -129,7 +129,7 @@ public:
     }
 
 public:
-    template<typename K>
+    template <typename K>
     inline Point& operator+=(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         x += static_cast<T>(k);
@@ -137,7 +137,7 @@ public:
         return *this;
     }
 
-    template<typename K>
+    template <typename K>
     inline Point& operator-=(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         x -= static_cast<T>(k);
@@ -145,7 +145,7 @@ public:
         return *this;
     }
 
-    template<typename K>
+    template <typename K>
     inline Point& operator*=(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         x *= static_cast<T>(k);
@@ -153,7 +153,7 @@ public:
         return *this;
     }
 
-    template<typename K>
+    template <typename K>
     inline Point& operator/=(K const& k) const {
         static_assert(std::is_arithmetic_v<K>);
         x /= static_cast<T>(k);
@@ -164,10 +164,6 @@ public:
 public:
     inline bool operator==(Point const& other) const {
         return x == other.x && y == other.y;
-    }
-
-    inline bool operator!=(Point const& other) const {
-        return x != other.x or y != other.y;
     }
 
     inline Point& operator+=(Point const& other) const {

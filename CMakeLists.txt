@@ -4,10 +4,8 @@ project(ApplicationLibrary LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED)
 
-# Add tests
 add_subdirectory(tests)
 
-# Obtain the source files
 file(GLOB_RECURSE SOURCES source/*.cpp)
 file(GLOB_RECURSE HEADERS source/*.hpp)
 

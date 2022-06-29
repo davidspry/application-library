@@ -9,7 +9,7 @@ namespace ds::events {
 //! @note Inherit from this struct in order to add new events.
 
 namespace EventType {
-    static constexpr int CursorEvent {-1};
+static constexpr int CursorEvent {-1};
 }
 
 //! @struct An event within a system.

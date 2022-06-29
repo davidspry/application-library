@@ -10,7 +10,7 @@ namespace ds::ui {
 
 //! @class A rectangular bounding box.
 
-template<typename T>
+template <typename T>
 class Bounds {
 public:
     //! @brief Construct an empty bounds at position (0, 0).
@@ -77,7 +77,7 @@ public:
     //! @brief Indicate whether the given point falls within the bounds.
     //! @param xy The point to be tested.
 
-    template<typename K>
+    template <typename K>
     inline bool contains(ds::ui::Point<K> const& xy) const {
         static_assert(std::is_integral_v<K> or std::is_floating_point_v<K>,
                       "The given type must either be an integral or a floating point type.");

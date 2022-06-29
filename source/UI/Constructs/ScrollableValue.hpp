@@ -10,7 +10,7 @@ namespace ds::ui {
 
 //! @class A numeric value that can be scrolled within a range by a cursor.
 
-template<typename T>
+template <typename T>
 class ScrollableValue: public ds::ui::CursorTarget {
 public:
     //! @brief Create a scrolled value between 0 and 1.
