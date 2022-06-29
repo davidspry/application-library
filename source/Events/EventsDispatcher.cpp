@@ -14,11 +14,11 @@ void Dispatcher::dispatch(Event const& event) {
     }
 }
 
-void Dispatcher::subscribe(int const& eventId, ReceiverInterface* const receiver) {
+void Dispatcher::subscribe(int eventId, ReceiverInterface* const receiver) {
     channels[eventId].push_back(receiver);
 }
 
-void Dispatcher::unsubscribe(int const& eventId, ReceiverInterface* receiver) {
+void Dispatcher::unsubscribe(int eventId, ReceiverInterface* receiver) {
     if (channels.contains(eventId)) {
         auto& channel = channels.at(eventId);
         auto iterator = std::find(channel.cbegin(), channel.cend(), receiver);
